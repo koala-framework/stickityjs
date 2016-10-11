@@ -2,9 +2,16 @@
   "name": "stickityjs",
   "homepage": "https://github.com/koala-framework/stickityjs",
   "authors": [
-    "Vivid Planet Software GmbH"
+    "Michael Tiefenthaler <mt@vivid-planet.com>; Niko Sams <ns@vivid-planet.com>"
   ],
+  "description": "lightweight library that makes html elements sticky on top of the page",
   "main": "stickity.js",
-  "ignore": [],
-  "license": "BSD-2-Clause"
+  "license": "BSD-2-Clause",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }
