@@ -39,12 +39,12 @@
         var stickityContainerHeight = stickityContainer.height();
         var child = $('#'+elem.data('child-id'));
 
-        if (elem.offset().top <= window.pageYOffset + stickityContainerHeight && !child.hasClass('stickityElement--moved')) {
-            child.addClass('stickityElement--moved');
+        if (elem.offset().top <= window.pageYOffset + stickityContainerHeight && !child.data('moved')) {
+            child.data('moved', true);
             stickityContainer.append(child);
         }
         else if (elem.offset().top > window.pageYOffset + stickityContainerHeight - elem.height()) {
-            child.removeClass('stickityElement--moved');
+            child.data('moved', false);
             elem.append(child);
         }
     };
