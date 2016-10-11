@@ -26,6 +26,7 @@
     }
 }(function ($) {
     var stickityContainer;
+    var settings;
 
     //Set height for the parent of the fixed element
     var setHeightOfWrapper = function(elem) {
@@ -54,9 +55,11 @@
         if (initialized) return;
         initialized = true;
 
-        stickityContainer = $('<div style="position: fixed; width: 100%;' +
-            'display: inline-block; top: 0; -moz-transform: translateZ(0); -webkit-transform: translateZ(0); ' +
+        stickityContainer = $('<div class="'+settings.prefix+settings.stickityContainerIdentifier+'"' +
+            ' style="position: fixed; width: 100%; display: inline-block; top: 0; ' +
+            '-moz-transform: translateZ(0); -webkit-transform: translateZ(0); ' +
             '-ms-transform: translateZ(0); transform: translateZ(0);"></div>');
+
          $('body').append(stickityContainer);
 
         $(window).on('resize', function() {
@@ -73,14 +76,19 @@
     };
 
     var stickityElems = [];
-    $.fn.stickity = function(selector) {
-        initialize();
+    $.fn.stickity = function(options) {
+        settings = $.extend({
+            prefix: '',
+            stickityElementIdentifier: 'stickityElement',
+            stickityContainerIdentifier: 'stickityContainer',
+        }, options );
 
+        initialize();
         //Wrap the content of every sticky element in an extra div
         return this.each(function (i, el) {
             var elem = $(this);
-            elem.data('child-id', 'stickityElement--'+i);
-            elem.wrapInner('<div class="stickityElement" id="stickityElement--'+i+'"></div>');
+            elem.data('child-id', settings.prefix+settings.stickityElementIdentifier+'--'+i);
+            elem.wrapInner('<div class="'+settings.prefix+settings.stickityElementIdentifier+'" id="'+settings.prefix+settings.stickityElementIdentifier+'--'+i+'"></div>');
 
             setHeightOfWrapper(elem);
             setStickyOrNot(elem);
