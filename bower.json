@@ -1,0 +1,10 @@
+{
+  "name": "stickityjs",
+  "homepage": "https://github.com/koala-framework/stickityjs",
+  "authors": [
+    "Vivid Planet Software GmbH"
+  ],
+  "main": "stickity.js",
+  "ignore": [],
+  "license": "BSD-2-Clause"
+}
