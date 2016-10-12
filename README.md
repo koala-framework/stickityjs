@@ -16,3 +16,10 @@ $('.myStickyElements').stickity({
   stickityContainerIdentifier: 'yourFixedContainerClass'
 });
 ```
+### Supports
+Desktop: IE9+, Edge, actual Chrome, Firefox and Safari
+Mobile: Safari Mobile 8, actual Chrome Mobile, Android Browser 5.0
+
+### Partial support
+Safari Mobile < 8 is partial supported, because elements gets only sticky after scrollaction ends
+Android 4.4 seems to have some grafik fails for a short time when an element gets sticky
