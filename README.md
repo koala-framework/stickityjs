@@ -12,7 +12,7 @@ Stickity wraps all your sticky elements in a div. It also creates one separate d
 ```javascript
 $('.myStickyElements').stickity({
   prefix: 'yourPrefix',
-  stickityElementIdentifier: 'myStickyElementClass',
-  stickityContainerIdentifier: 'myFixedContainerClass'
+  stickityElementIdentifier: 'yourStickyElementClass',
+  stickityContainerIdentifier: 'yourFixedContainerClass'
 });
 ```
