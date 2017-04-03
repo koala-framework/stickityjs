@@ -22,11 +22,11 @@
         var stickityContainerHeight = stickityContainer.height();
         var child = $('#'+elem.data('child-id'));
 
-        if (elem.offset().top <= window.pageYOffset + stickityContainerHeight && !child.data('moved')) {
+        if (elem.offset().top <= window.pageYOffset + stickityContainerHeight && !child.data('moved') && !elem.is(stickityContainer)) {
             child.data('moved', true);
             stickityContainer.append(child);
         }
-        else if (elem.offset().top > window.pageYOffset + stickityContainerHeight - elem.height()) {
+        else if (elem.offset().top > window.pageYOffset + stickityContainerHeight - elem.height() && !elem.is(child.parent())) {
             child.data('moved', false);
             elem.append(child);
         }
@@ -62,7 +62,7 @@
         settings = $.extend({
             prefix: '',
             stickityElementIdentifier: 'stickityElement',
-            stickityContainerIdentifier: 'stickityContainer',
+            stickityContainerIdentifier: 'stickityContainer'
         }, options );
 
         initialize();
