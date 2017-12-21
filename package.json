@@ -1,0 +1,24 @@
+{
+  "name": "@vivid-planet/stickityjs",
+  "version": "0.0.4",
+  "description": "lightweight library that makes html elements sticky on top of the page",
+  "main": "stickity.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koala-framework/stickityjs.git"
+  },
+  "peerDependencies": {
+    "jquery": "^1.12.4 || ^3.2.1"
+  },
+  "keywords": [
+    "jquery",
+    "sticky",
+    "stickity"
+  ],
+  "author": "Michael Tiefenthaler <mt@vivid-planet.com>",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/koala-framework/stickityjs/issues"
+  },
+  "homepage": "https://github.com/koala-framework/stickityjs#readme"
+}
